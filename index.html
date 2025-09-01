@@ -262,7 +262,7 @@
         <div id="loading-section" class="hidden mt-4 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
           <div class="text-center">
             <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4"></div>
-            <p class="text-blue-800 font-semibold mb-2">Gerando seu PIX...</p>
+            <p class="text-blue-800 font-semibold mb-2">🔄 Gerando seu PIX...</p>
             <div class="text-lg font-bold text-blue-900">
               Tempo restante: <span id="contador-geracao">30</span>s
             </div>
@@ -505,6 +505,9 @@
 
       const qrDiv = document.getElementById('qr');
       if (data.point_of_interaction?.transaction_data?.qr_code_base64) {
+        // Atualizar a dica para mostrar sucesso
+        atualizarDicaPix(true);
+        
         qrDiv.innerHTML = `
           <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 text-center hover:shadow-xl transition-shadow">
             <h3 class="text-2xl font-bold text-gray-800 mb-4 font-elegant">📱 Escaneie o QR Code</h3>
@@ -520,9 +523,6 @@
                     class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 mb-4">
               📋 Copiar Código PIX
             </button>
-            <p class="text-sm text-gray-600 text-center mb-4">
-              💡 Se não conseguir copiar, toque no botão novamente para ver outras opções
-            </p>
             <div id="contador-pix" class="text-center">
               <div class="text-lg font-semibold text-gray-700 mb-2">⏰ Tempo restante para pagamento:</div>
               <div id="tempo-restante" class="text-2xl font-bold text-red-600"></div>
@@ -701,6 +701,21 @@
     function tentarCopiarNovamente(codigo) {
       fecharModal();
       setTimeout(() => copiarCodigoPix(codigo), 100);
+    }
+
+    function atualizarDicaPix(sucesso) {
+      const dicaDiv = document.getElementById('dica-pix');
+      if (sucesso) {
+        dicaDiv.className = 'mt-3 p-3 bg-green-50 border-l-4 border-green-400 rounded-lg';
+        dicaDiv.innerHTML = `
+          <p class="text-sm text-green-800">✅ <strong>Sucesso:</strong> Seu PIX foi gerado com sucesso e está logo abaixo.</p>
+        `;
+      } else {
+        dicaDiv.className = 'mt-3 p-3 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg';
+        dicaDiv.innerHTML = `
+          <p class="text-sm text-yellow-800">💡 <strong>Dica:</strong> Caso o PIX não for gerado, clique no botão acima "Recarregar Página" e tente novamente.</p>
+        `;
+      }
     }
 
     function iniciarContadorPix(segundos) {
