@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Presente de Casamento - PIX</title>
+  
+  <!-- Meta tags para WhatsApp e redes sociais -->
+  <meta property="og:title" content="Gabriel e Leliane - Presente de Casamento">
+  <meta property="og:description" content="Envie nos um presente!">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop&crop=center">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Casamento Gabriel e Leliane">
+  
+  <!-- Meta tags específicas para WhatsApp -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gabriel e Leliane - Presente de Casamento">
+  <meta name="twitter:description" content="Envie nos um presente! Contribua para o nosso casamento via PIX. 1 de Novembro de 2025.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop&crop=center">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>"></head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -132,7 +149,7 @@
     <!-- Header -->
     <div class="text-center mb-12">
       <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-elegant">Gabriel e Leliane</h1>
-      <p class="text-lg text-gray-600 font-elegant italic">1 de Novembro</p>
+      <p class="text-2xl text-gray-600 font-elegant italic">1 de Novembro de 2025</p>
     </div>
 
     <!-- Layout Vertical -->
@@ -142,7 +159,7 @@
       <form id="mensagem-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" target="_blank" class="space-y-4">
         <div>
           <label for="nome" class="block text-sm font-medium text-gray-700 mb-2">Seu Nome</label>
-          <input type="text" id="nome" name="nome" placeholder="Ex: João Silva" required 
+          <input type="text" id="nome" name="nome" required 
                  class="w-full font-sans px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all">
         </div>
 
@@ -162,7 +179,7 @@
     <!-- Seção 2: Presentes / Pagamento PIX -->
     <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow mb-12">
       <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center font-elegant">🎁 Presentes</h2>
-      <p class="text-center text-gray-600 mb-4">Escolha um valor para contribuir</p>
+      <p class="text-center text-gray-900 mb-4">Escolha Um Valor Para Nos Presentiar</p>
 
       <div class="gift-decoration">
         🎁✨🎂
@@ -171,7 +188,7 @@
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
         <button type="button" onclick="preencherValor(10)" class="present-button present-button-10">
           <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX" class="present-icon w-12 h-12 mx-auto mb-2">
-          <p class="present-value">Qualquer valor</p>
+          <p class="present-value">Outro Valor</p>
         </button>
         <button type="button" onclick="preencherValor(20)" class="present-button present-button-20">
           <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX" class="present-icon w-12 h-12 mx-auto mb-2">
@@ -316,29 +333,46 @@
   <script>
     // Array para armazenar apoiadores
     let apoiadoresData = [];
+    let apoiadoresVisiveis = 0;
+    const apoiadoresPorPagina = 6;
 
     // Carregar apoiadores do arquivo JSON
     async function carregarApoiadores() {
       try {
         const response = await fetch('./apoiadores.json');
         apoiadoresData = await response.json();
+        apoiadoresVisiveis = 0;
         renderApoiadores();
       } catch (error) {
         console.error('Erro ao carregar apoiadores:', error);
         // Fallback se não conseguir carregar o arquivo
         apoiadoresData = [
-          { nome: "Ana", mensagem: "Parabéns ao casal!" },
+          { nome: "Ana", mensagem: "Agradecemos de Todo Nosso Coração" },
+          { nome: "Carlos", mensagem: "Muita felicidade!" },
+          { nome: "Mariana", mensagem: "Tudo de bom!" },
+          { nome: "Ana", mensagem: "Agradecemos de Todo Nosso Coração" },
           { nome: "Carlos", mensagem: "Muita felicidade!" },
           { nome: "Mariana", mensagem: "Tudo de bom!" }
         ];
+        apoiadoresVisiveis = 0;
         renderApoiadores();
       }
     }
 
     function renderApoiadores() {
       const container = document.getElementById('apoiadores');
-      container.innerHTML = '';
-      apoiadoresData.forEach(apoiador => {
+      
+      // Se é a primeira renderização, limpa o container
+      if (apoiadoresVisiveis === 0) {
+        container.innerHTML = '';
+      }
+      
+      // Calcula quantos apoiadores mostrar
+      const proximosApoiadores = Math.min(apoiadoresVisiveis + apoiadoresPorPagina, apoiadoresData.length);
+      
+      // Adiciona os novos apoiadores
+      for (let i = apoiadoresVisiveis; i < proximosApoiadores; i++) {
+        const apoiador = apoiadoresData[i];
         const div = document.createElement('div');
         div.classList.add('bg-gradient-to-br', 'from-gray-50', 'to-gray-100', 'p-4', 'rounded-xl', 'shadow-sm', 'hover:shadow-md', 'transition-shadow', 'border-l-4', 'border-slate-500');
         div.innerHTML = `
@@ -346,7 +380,34 @@
           <p class="text-gray-600 text-sm">"${apoiador.mensagem}"</p>
         `;
         container.appendChild(div);
-      });
+      }
+      
+      // Atualiza o contador de apoiadores visíveis
+      apoiadoresVisiveis = proximosApoiadores;
+      
+      // Remove botão anterior se existir
+      const botaoAnterior = document.getElementById('botao-carregar-mais');
+      if (botaoAnterior) {
+        botaoAnterior.remove();
+      }
+      
+      // Adiciona botão "Carregar Mais" se ainda há apoiadores para mostrar
+      if (apoiadoresVisiveis < apoiadoresData.length) {
+        const botaoCarregarMais = document.createElement('div');
+        botaoCarregarMais.id = 'botao-carregar-mais';
+        botaoCarregarMais.className = 'col-span-full text-center mt-4';
+        botaoCarregarMais.innerHTML = `
+          <button onclick="carregarMaisApoiadores()" 
+                  class="bg-gradient-to-r from-slate-500 to-slate-600 text-white font-semibold py-3 px-8 rounded-lg hover:from-slate-600 hover:to-slate-700 transform hover:scale-105 transition-all duration-200 shadow-md">
+            Carregar Mais
+          </button>
+        `;
+        container.appendChild(botaoCarregarMais);
+      }
+    }
+
+    function carregarMaisApoiadores() {
+      renderApoiadores();
     }
 
     // Carrega apoiadores quando a página carrega
@@ -516,7 +577,7 @@
     const intervalo = setInterval(atualizarContagem, 1000);
 
     function iniciarLive() {
-      mostrarModal("🎥 A live será iniciada em breve! Aguarde...");
+      mostrarModal("🎥 A live vai começar ao final da contagem regressiva...");
     }
 
     // Animação de entrada
