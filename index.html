@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,8 @@
   <!-- Meta tags para WhatsApp e redes sociais -->
   <meta property="og:title" content="Gabriel e Leliane">
   <meta property="og:description" content="Envie nos um presente!🎁🎁">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop&crop=center">
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop&crop=center">
   <meta property="og:url" content="">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Casamento Gabriel e Leliane">
@@ -16,139 +18,205 @@
   <!-- Meta tags específicas para WhatsApp -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Gabriel e Leliane - Presente de Casamento">
-  <meta name="twitter:description" content="Envie nos um presente! Contribua para o nosso casamento via PIX. 1 de Novembro de 2025.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop&crop=center">
+  <meta name="twitter:description"
+    content="Envie nos um presente! Contribua para o nosso casamento via PIX. 1 de Novembro de 2025.">
+  <meta name="twitter:image"
+    content="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop&crop=center">
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>"></head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            'elegant': ['Libertinus Serif', 'Playfair Display', 'serif'],
-            'sans': ['Inter', 'system-ui', 'sans-serif'],
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>">
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+  rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          'elegant': ['Libertinus Serif', 'Playfair Display', 'serif'],
+          'sans': ['Inter', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          rose: {
+            50: '#fff1f2',
+            100: '#ffe4e6',
+            500: '#f43f5e',
+            600: '#e11d48',
           },
-          colors: {
-            rose: {
-              50: '#fff1f2',
-              100: '#ffe4e6',
-              500: '#f43f5e',
-              600: '#e11d48',
-            },
-            slate: {
-              500: '#64748b',
-              600: '#475569',
-            }
+          slate: {
+            500: '#64748b',
+            600: '#475569',
           }
         }
       }
     }
-  </script>
-  <style>
-    .gradient-bg {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-    .glass-effect {
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.1);
-    }
+  }
+</script>
+<style>
+  .gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
 
-    .present-button {
-      position: relative;
-      background: linear-gradient(145deg, #4facfe, #00f2fe);
-      border: none;
-      border-radius: 15px;
-      padding: 20px 15px;
-      cursor: pointer;
-      transform-style: preserve-3d;
-      transition: all 0.3s ease;
-      box-shadow: 
-        0 8px 15px rgba(79, 172, 254, 0.3),
-        inset 0 2px 4px rgba(255, 255, 255, 0.2),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+  }
 
-    .present-button:hover {
-      transform: translateY(-3px) rotateX(5deg);
-      box-shadow: 
-        0 15px 25px rgba(79, 172, 254, 0.4),
-        inset 0 2px 4px rgba(255, 255, 255, 0.3),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.1);
-    }
+  .present-button {
+    position: relative;
+    background: linear-gradient(145deg, #4facfe, #00f2fe);
+    border: none;
+    border-radius: 15px;
+    padding: 20px 15px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+    box-shadow:
+      0 8px 15px rgba(79, 172, 254, 0.3),
+      inset 0 2px 4px rgba(255, 255, 255, 0.2),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
 
-    .present-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-      transition: left 0.6s;
-    }
+  .present-button:hover {
+    transform: translateY(-3px) rotateX(5deg);
+    box-shadow:
+      0 15px 25px rgba(79, 172, 254, 0.4),
+      inset 0 2px 4px rgba(255, 255, 255, 0.3),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+  }
 
-    .present-button:hover::before {
-      left: 100%;
-    }
+  .present-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transition: left 0.6s;
+  }
 
-    .present-icon {
-      margin-bottom: 8px;
-      display: block;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-      animation: sparkle 2s infinite;
-    }
+  .present-button:hover::before {
+    left: 100%;
+  }
 
-    .present-value {
-      font-weight: bold;
-      font-size: 16px;
-      color: white;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-      margin: 0;
-    }
+  .present-icon {
+    margin-bottom: 8px;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    animation: sparkle 2s infinite;
+  }
 
-    @keyframes sparkle {
-      0%, 100% { transform: scale(1); filter: brightness(1); }
-      50% { transform: scale(1.1); filter: brightness(1.3); }
-    }
+  .present-value {
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+  }
 
-    .present-button-10 { background: linear-gradient(145deg, #3b82f6, #1d40af); }
-    .present-button-20 { background: linear-gradient(145deg, #2563eb, #1d4ed8); }
-    .present-button-30 { background: linear-gradient(145deg, #1e40af, #0f766e); }
-    .present-button-40 { background: linear-gradient(145deg, #0891b2, #0d9488); }
-    .present-button-50 { background: linear-gradient(145deg, #0e7490, #059669); }
-    .present-button-60 { background: linear-gradient(145deg, #0f766e, #047857); }
-    .present-button-70 { background: linear-gradient(145deg, #0d9488, #065f46); }
-    .present-button-80 { background: linear-gradient(145deg, #059669, #064e3b); }
-    .present-button-90 { background: linear-gradient(145deg, #047857, #14532d); }
-    .present-button-100 { background: linear-gradient(145deg, #065f46, #166534); }
+  @keyframes sparkle {
 
-
-    .gift-decoration {
-      text-align: center;
-      margin: 20px 0;
-      font-size: 60px;
-      animation: bounce 2s infinite;
+    0%,
+    100% {
+      transform: scale(1);
+      filter: brightness(1);
     }
 
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-10px); }
-      60% { transform: translateY(-5px); }
+    50% {
+      transform: scale(1.1);
+      filter: brightness(1.3);
+    }
+  }
+
+  .present-button-10 {
+    background: linear-gradient(145deg, #3b82f6, #1d40af);
+  }
+
+  .present-button-20 {
+    background: linear-gradient(145deg, #2563eb, #1d4ed8);
+  }
+
+  .present-button-30 {
+    background: linear-gradient(145deg, #1e40af, #0f766e);
+  }
+
+  .present-button-40 {
+    background: linear-gradient(145deg, #0891b2, #0d9488);
+  }
+
+  .present-button-50 {
+    background: linear-gradient(145deg, #0e7490, #059669);
+  }
+
+  .present-button-60 {
+    background: linear-gradient(145deg, #0f766e, #047857);
+  }
+
+  .present-button-70 {
+    background: linear-gradient(145deg, #0d9488, #065f46);
+  }
+
+  .present-button-80 {
+    background: linear-gradient(145deg, #059669, #064e3b);
+  }
+
+  .present-button-90 {
+    background: linear-gradient(145deg, #047857, #14532d);
+  }
+
+  .present-button-100 {
+    background: linear-gradient(145deg, #065f46, #166534);
+  }
+
+
+  .gift-decoration {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 60px;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
     }
 
-    /* Animação para o modal de mensagem */
-    @keyframes bounce-message {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    40% {
+      transform: translateY(-10px);
     }
-  </style>
+
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
+  /* Animação para o modal de mensagem */
+  @keyframes bounce-message {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+</style>
 </head>
+
 <body class="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 font-sans">
   <div class="container mx-auto px-4 py-8 max-w-4xl">
 
@@ -161,22 +229,23 @@
     <!-- Layout Vertical -->
     <!-- Seção 1: Mensagem -->
     <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow mb-8">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center font-elegant">✉️ Deixe uma mensagem para os noivos</h2>
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center font-elegant">✉️ Deixe uma mensagem para os noivos
+      </h2>
       <form id="mensagem-form" action="https://formspree.io/f/mldwlgle" method="POST" class="space-y-4">
         <div>
           <label for="nome" class="block text-sm font-medium text-gray-700 mb-2">Seu Nome</label>
-          <input type="text" id="nome" name="nome" required 
-                 class="w-full font-sans px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all">
+          <input type="text" id="nome" name="nome" required
+            class="w-full font-sans px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all">
         </div>
 
         <div>
           <label for="mensagem" class="block text-sm font-medium text-gray-700 mb-2">Mensagem</label>
           <textarea id="mensagem" name="mensagem" placeholder="Parabéns pelo casamento!" rows="4" required
-                    class="w-full font-sans px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all resize-none"></textarea>
+            class="w-full font-sans px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all resize-none"></textarea>
         </div>
 
-        <button type="submit" 
-                class="w-full bg-gradient-to-r from-slate-500 to-slate-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-slate-600 hover:to-slate-700 transform hover:scale-105 transition-all duration-200">
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-slate-500 to-slate-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-slate-600 hover:to-slate-700 transform hover:scale-105 transition-all duration-200">
           Enviar Mensagem
         </button>
       </form>
@@ -193,43 +262,53 @@
 
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
         <button type="button" onclick="preencherValor(10)" class="present-button present-button-10">
-          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX" class="present-icon w-12 h-12 mx-auto mb-2">
+          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX"
+            class="present-icon w-12 h-12 mx-auto mb-2">
           <p class="present-value">Outro Valor</p>
         </button>
         <button type="button" onclick="preencherValor(20)" class="present-button present-button-20">
-          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX" class="present-icon w-12 h-12 mx-auto mb-2">
+          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX"
+            class="present-icon w-12 h-12 mx-auto mb-2">
           <p class="present-value">R$ 20</p>
         </button>
         <button type="button" onclick="preencherValor(30)" class="present-button present-button-30">
-          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX" class="present-icon w-12 h-12 mx-auto mb-2">
+          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX"
+            class="present-icon w-12 h-12 mx-auto mb-2">
           <p class="present-value">R$ 30</p>
         </button>
         <button type="button" onclick="preencherValor(40)" class="present-button present-button-40">
-          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX" class="present-icon w-12 h-12 mx-auto mb-2">
+          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX"
+            class="present-icon w-12 h-12 mx-auto mb-2">
           <p class="present-value">R$ 40</p>
         </button>
         <button type="button" onclick="preencherValor(50)" class="present-button present-button-50">
-          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX" class="present-icon w-12 h-12 mx-auto mb-2">
+          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX"
+            class="present-icon w-12 h-12 mx-auto mb-2">
           <p class="present-value">R$ 50</p>
         </button>
         <button type="button" onclick="preencherValor(60)" class="present-button present-button-60">
-          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX" class="present-icon w-12 h-12 mx-auto mb-2">
+          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX"
+            class="present-icon w-12 h-12 mx-auto mb-2">
           <p class="present-value">R$ 60</p>
         </button>
         <button type="button" onclick="preencherValor(70)" class="present-button present-button-70">
-          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX" class="present-icon w-12 h-12 mx-auto mb-2">
+          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX"
+            class="present-icon w-12 h-12 mx-auto mb-2">
           <p class="present-value">R$ 70</p>
         </button>
         <button type="button" onclick="preencherValor(80)" class="present-button present-button-80">
-          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX" class="present-icon w-12 h-12 mx-auto mb-2">
+          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX"
+            class="present-icon w-12 h-12 mx-auto mb-2">
           <p class="present-value">R$ 80</p>
         </button>
         <button type="button" onclick="preencherValor(90)" class="present-button present-button-90">
-          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX" class="present-icon w-12 h-12 mx-auto mb-2">
+          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX"
+            class="present-icon w-12 h-12 mx-auto mb-2">
           <p class="present-value">R$ 90</p>
         </button>
         <button type="button" onclick="preencherValor(100)" class="present-button present-button-100">
-          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX" class="present-icon w-12 h-12 mx-auto mb-2">
+          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX"
+            class="present-icon w-12 h-12 mx-auto mb-2">
           <p class="present-value">R$ 100</p>
         </button>
       </div>
@@ -237,29 +316,30 @@
       <div id="pagador-section" class="hidden space-y-4">
         <div>
           <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email do Pagador</label>
-          <input type="email" id="email" required 
-                 class="w-full font-sans px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all">
+          <input type="email" id="email" required
+            class="w-full font-sans px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all">
         </div>
 
         <div>
           <label for="descricao" class="block text-sm font-medium text-gray-700 mb-2">Descrição</label>
-          <input type="text" id="descricao" value="Presente do Casamento" readonly 
-                 class="w-full font-sans px-4 py-3 border border-gray-300 rounded-lg bg-gray-50">
+          <input type="text" id="descricao" value="Presente do Casamento" readonly
+            class="w-full font-sans px-4 py-3 border border-gray-300 rounded-lg bg-gray-50">
         </div>
 
         <div>
           <label for="valor" class="block text-sm font-medium text-gray-700 mb-2">Valor (R$)</label>
-          <input type="number" id="valor" step="0.01" required 
-                 class="w-full font-sans px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all">
+          <input type="number" id="valor" step="0.01" required
+            class="w-full font-sans px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all">
         </div>
 
         <button type="button" onclick="enviarPagamento()" id="botao-gerar-pix"
-                class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-emerald-600 hover:to-emerald-700 transform hover:scale-105 transition-all duration-200">
+          class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-emerald-600 hover:to-emerald-700 transform hover:scale-105 transition-all duration-200">
           Gerar PIX
         </button>
 
         <!-- Indicador de carregamento e contador -->
-        <div id="loading-section" class="hidden mt-4 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
+        <div id="loading-section"
+          class="hidden mt-4 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
           <div class="text-center">
             <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4"></div>
             <p class="text-blue-800 font-semibold mb-2">🔄 Gerando seu PIX...</p>
@@ -269,8 +349,8 @@
           </div>
         </div>
 
-        <button type="button" onclick="recarregarPagina()" 
-                class="w-full mt-3 bg-gradient-to-r from-gray-500 to-gray-500 text-white font-semibold py-3 px-6 rounded-lg hover:from-gray-500 hover:to-gray-500 transform hover:scale-105 transition-all duration-200">
+        <button type="button" onclick="recarregarPagina()"
+          class="w-full mt-3 bg-gradient-to-r from-gray-500 to-gray-500 text-white font-semibold py-3 px-6 rounded-lg hover:from-gray-500 hover:to-gray-500 transform hover:scale-105 transition-all duration-200">
           Recarregar Página
         </button>
 
@@ -287,10 +367,11 @@
     <!-- Live do Casamento -->
     <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-12 hover:shadow-xl transition-shadow">
       <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center font-elegant">📺 Live do Casamento</h1>
-      <div id="liveVideo" class="relative w-full h-64 md:h-80 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden flex items-center justify-center">
+      <div id="liveVideo"
+        class="relative w-full h-64 md:h-80 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden flex items-center justify-center">
         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <button onclick="iniciarLive()" 
-                  class="bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center text-2xl md:text-3xl transform hover:scale-110 transition-all duration-200 shadow-lg">
+          <button onclick="iniciarLive()"
+            class="bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center text-2xl md:text-3xl transform hover:scale-110 transition-all duration-200 shadow-lg">
             ▶️
           </button>
         </div>
@@ -319,12 +400,12 @@
     <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-8 max-w-md w-full mx-4 transform transition-all">
       <p class="text-center text-gray-800 mb-6 text-lg">⏰ Tempo esgotado! Você conseguiu efetuar o pagamento?</p>
       <div class="flex gap-4">
-        <button onclick="recarregarPagina()" 
-                class="flex-1 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200">
+        <button onclick="recarregarPagina()"
+          class="flex-1 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200">
           ❌ Não
         </button>
-        <button onclick="mostrarAgradecimento()" 
-                class="flex-1 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-200">
+        <button onclick="mostrarAgradecimento()"
+          class="flex-1 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-200">
           ✅ Sim
         </button>
       </div>
@@ -338,8 +419,8 @@
         <div class="text-6xl mb-4">🎉</div>
         <h3 class="text-2xl font-bold text-gray-800 mb-4 font-elegant">Obrigado pelo seu presente!</h3>
         <p class="text-gray-600 mb-6">Em menos de 24 horas seu nome aparecerá na lista abaixo.</p>
-        <button onclick="recarregarPagina()" 
-                class="w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-gray-600 hover:to-gray-700 transition-all duration-200">
+        <button onclick="recarregarPagina()"
+          class="w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-gray-600 hover:to-gray-700 transition-all duration-200">
           Sair
         </button>
       </div>
@@ -347,7 +428,8 @@
   </div>
 
   <!-- Modal de Agradecimento pela Mensagem -->
-  <div id="modalMensagemAgradecimento" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+  <div id="modalMensagemAgradecimento"
+    class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
     <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-8 max-w-md w-full mx-4 transform transition-all">
       <div class="text-center">
         <div class="text-6xl mb-4 animate-bounce">💌</div>
@@ -357,8 +439,8 @@
           <div class="bg-gradient-to-r from-green-100 to-blue-100 p-4 rounded-lg">
             <p class="text-sm text-gray-700">✨ Sua mensagem será guardada com carinho em nossos corações! ✨</p>
           </div>
-          <button onclick="fecharModalMensagem()" 
-                  class="w-full bg-gradient-to-r from-slate-500 to-slate-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-slate-600 hover:to-slate-700 transition-all duration-200 transform hover:scale-105">
+          <button onclick="fecharModalMensagem()"
+            class="w-full bg-gradient-to-r from-slate-500 to-slate-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-slate-600 hover:to-slate-700 transition-all duration-200 transform hover:scale-105">
             Fechar
           </button>
         </div>
@@ -368,10 +450,11 @@
 
   <!-- Modal Geral -->
   <div id="modalOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
-    <div id="modalContent" class="bg-white rounded-2xl shadow-2xl p-6 md:p-8 max-w-md w-full mx-4 transform transition-all">
+    <div id="modalContent"
+      class="bg-white rounded-2xl shadow-2xl p-6 md:p-8 max-w-md w-full mx-4 transform transition-all">
       <p id="modalMessage" class="text-center text-gray-800 mb-6"></p>
-      <button onclick="fecharModal()" 
-              class="w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-gray-600 hover:to-gray-700 transition-all duration-200">
+      <button onclick="fecharModal()"
+        class="w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-gray-600 hover:to-gray-700 transition-all duration-200">
         Fechar
       </button>
     </div>
@@ -394,12 +477,12 @@
         console.error('Erro ao carregar apoiadores:', error);
         // Fallback se não conseguir carregar o arquivo
         apoiadoresData = [
-          { nome: "Ana", mensagem: "Agradecemos de Todo Nosso Coração" },
-          { nome: "Carlos", mensagem: "Muita felicidade!" },
-          { nome: "Mariana", mensagem: "Tudo de bom!" },
-          { nome: "Ana", mensagem: "Agradecemos de Todo Nosso Coração" },
-          { nome: "Carlos", mensagem: "Muita felicidade!" },
-          { nome: "Mariana", mensagem: "Tudo de bom!" }
+          {nome: "Ana", mensagem: "Agradecemos de Todo Nosso Coração"},
+          {nome: "Carlos", mensagem: "Muita felicidade!"},
+          {nome: "Mariana", mensagem: "Tudo de bom!"},
+          {nome: "Ana", mensagem: "Agradecemos de Todo Nosso Coração"},
+          {nome: "Carlos", mensagem: "Muita felicidade!"},
+          {nome: "Mariana", mensagem: "Tudo de bom!"}
         ];
         apoiadoresVisiveis = 0;
         renderApoiadores();
@@ -485,7 +568,7 @@
       try {
         const resposta = await fetch('https://presente-api-1.onrender.com/pagar', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
             payer_email: email,
             description: descricao,
@@ -494,21 +577,21 @@
         });
 
         const data = await resposta.json();
-        
+
         // Parar contador e esconder loading
         pararContadorGeracao();
         esconderLoading();
-        
+
         // Reabilitar o botão
         botao.disabled = false;
         botao.classList.remove('opacity-50', 'cursor-not-allowed');
 
-      const qrDiv = document.getElementById('qr');
-      if (data.point_of_interaction?.transaction_data?.qr_code_base64) {
-        // Atualizar a dica para mostrar sucesso
-        atualizarDicaPix(true);
-        
-        qrDiv.innerHTML = `
+        const qrDiv = document.getElementById('qr');
+        if (data.point_of_interaction?.transaction_data?.qr_code_base64) {
+          // Atualizar a dica para mostrar sucesso
+          atualizarDicaPix(true);
+
+          qrDiv.innerHTML = `
           <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 text-center hover:shadow-xl transition-shadow">
             <h3 class="text-2xl font-bold text-gray-800 mb-4 font-elegant">📱 Escaneie o QR Code</h3>
             <div class="flex justify-center mb-6">
@@ -530,15 +613,15 @@
           </div>
         `;
 
-        // Adiciona à lista de apoiadores após pagamento
-        const nome = document.getElementById('nome').value || "Anônimo";
-        const mensagem = document.getElementById('mensagem').value || "";
-        apoiadoresData.push({ nome, mensagem });
-        renderApoiadores();
+          // Adiciona à lista de apoiadores após pagamento
+          const nome = document.getElementById('nome').value || "Anônimo";
+          const mensagem = document.getElementById('mensagem').value || "";
+          apoiadoresData.push({nome, mensagem});
+          renderApoiadores();
 
-        // Inicia contagem de 2 minutos
-        iniciarContadorPix(120); // 120 segundos = 2 minutos
-      } else {
+          // Inicia contagem de 2 minutos
+          iniciarContadorPix(120); // 120 segundos = 2 minutos
+        } else {
           qrDiv.innerHTML = `
             <div class="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
               <p class="text-red-600">❌ Erro: ${JSON.stringify(data)}</p>
@@ -549,11 +632,11 @@
         // Em caso de erro, parar contador e esconder loading
         pararContadorGeracao();
         esconderLoading();
-        
+
         // Reabilitar o botão
         botao.disabled = false;
         botao.classList.remove('opacity-50', 'cursor-not-allowed');
-        
+
         // Mostrar erro
         const qrDiv = document.getElementById('qr');
         qrDiv.innerHTML = `
@@ -575,23 +658,23 @@
     function iniciarContadorGeracao() {
       let tempoRestante = 30;
       const contadorElement = document.getElementById('contador-geracao');
-      
+
       contadorGeracao = setInterval(() => {
         contadorElement.textContent = tempoRestante;
-        
+
         if (tempoRestante <= 0) {
           pararContadorGeracao();
           esconderLoading();
-          
+
           // Reabilitar o botão
           const botao = document.getElementById('botao-gerar-pix');
           botao.disabled = false;
           botao.classList.remove('opacity-50', 'cursor-not-allowed');
-          
+
           // Mostrar mensagem de timeout
           mostrarModal("⏰ Tempo esgotado para gerar o PIX. Tente novamente.");
         }
-        
+
         tempoRestante--;
       }, 1000);
     }
@@ -803,7 +886,7 @@
     }
 
     // Manipulador para o envio do formulário de mensagem
-    document.getElementById('mensagem-form').addEventListener('submit', function(e) {
+    document.getElementById('mensagem-form').addEventListener('submit', function (e) {
       e.preventDefault(); // Previne o envio padrão do formulário
 
       // Envia o formulário de forma assíncrona
@@ -847,4 +930,5 @@
     });
   </script>
 </body>
+
 </html>
