@@ -338,7 +338,8 @@
     renderApoiadores();
 
     function preencherValor(valor) {
-      document.getElementById('valor').value = 0;
+      // Only set to 0 for the first button (valor = 10), others use their actual value
+      document.getElementById('valor').value = valor === 10 ? 0 : valor;
       document.getElementById('pagador-section').classList.remove('hidden');
     }
 
