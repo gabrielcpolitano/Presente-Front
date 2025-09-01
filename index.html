@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Presente de Casamento - PIX</title>
-  
+
   <!-- Meta tags para WhatsApp e redes sociais -->
   <meta property="og:title" content="Gabriel e Leliane - Presente de Casamento">
   <meta property="og:description" content="Envie nos um presente! Contribua para o nosso casamento via PIX. 1 de Novembro de 2025.">
@@ -12,13 +12,13 @@
   <meta property="og:url" content="">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Casamento Gabriel e Leliane">
-  
+
   <!-- Meta tags específicas para WhatsApp -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Gabriel e Leliane - Presente de Casamento">
   <meta name="twitter:description" content="Envie nos um presente! Contribua para o nosso casamento via PIX. 1 de Novembro de 2025.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop&crop=center">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>"></head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,6 +141,12 @@
       40% { transform: translateY(-10px); }
       60% { transform: translateY(-5px); }
     }
+
+    /* Animação para o modal de mensagem */
+    @keyframes bounce-message {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
   </style>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 font-sans">
@@ -148,7 +154,7 @@
 
     <!-- Header -->
     <div class="text-center mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-elegant">Gabriel & Leliane</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-elegant">Gabriel e Leliane</h1>
       <p class="text-2xl text-gray-600 font-elegant italic">1 de Novembro de 2025</p>
     </div>
 
@@ -156,7 +162,7 @@
     <!-- Seção 1: Mensagem -->
     <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow mb-8">
       <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center font-elegant">✉️ Deixe uma mensagem</h2>
-      <form id="mensagem-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" target="_blank" class="space-y-4">
+      <form id="mensagem-form" action="https://formspree.io/f/mldwlgle" method="POST" class="space-y-4">
         <div>
           <label for="nome" class="block text-sm font-medium text-gray-700 mb-2">Seu Nome</label>
           <input type="text" id="nome" name="nome" required 
@@ -313,8 +319,28 @@
         <p class="text-gray-600 mb-6">Em menos de 24 horas seu nome aparecerá na lista abaixo.</p>
         <button onclick="recarregarPagina()" 
                 class="w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-gray-600 hover:to-gray-700 transition-all duration-200">
-          🚪 Sair
+          Sair
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Agradecimento pela Mensagem -->
+  <div id="modalMensagemAgradecimento" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-8 max-w-md w-full mx-4 transform transition-all">
+      <div class="text-center">
+        <div class="text-6xl mb-4 animate-bounce">💌</div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-4 font-elegant">Muito Obrigado pela Mensagem!</h3>
+        <p class="text-gray-600 mb-6">Sua mensagem carinhosa foi enviada e significa muito para nós! ❤️</p>
+        <div class="flex flex-col gap-3">
+          <div class="bg-gradient-to-r from-green-100 to-blue-100 p-4 rounded-lg">
+            <p class="text-sm text-gray-700">✨ Sua mensagem será guardada com carinho em nossos corações! ✨</p>
+          </div>
+          <button onclick="fecharModalMensagem()" 
+                  class="w-full bg-gradient-to-r from-slate-500 to-slate-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-slate-600 hover:to-slate-700 transition-all duration-200 transform hover:scale-105">
+            Fechar
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -361,15 +387,15 @@
 
     function renderApoiadores() {
       const container = document.getElementById('apoiadores');
-      
+
       // Se é a primeira renderização, limpa o container
       if (apoiadoresVisiveis === 0) {
         container.innerHTML = '';
       }
-      
+
       // Calcula quantos apoiadores mostrar
       const proximosApoiadores = Math.min(apoiadoresVisiveis + apoiadoresPorPagina, apoiadoresData.length);
-      
+
       // Adiciona os novos apoiadores
       for (let i = apoiadoresVisiveis; i < proximosApoiadores; i++) {
         const apoiador = apoiadoresData[i];
@@ -381,16 +407,16 @@
         `;
         container.appendChild(div);
       }
-      
+
       // Atualiza o contador de apoiadores visíveis
       apoiadoresVisiveis = proximosApoiadores;
-      
+
       // Remove botão anterior se existir
       const botaoAnterior = document.getElementById('botao-carregar-mais');
       if (botaoAnterior) {
         botaoAnterior.remove();
       }
-      
+
       // Adiciona botão "Carregar Mais" se ainda há apoiadores para mostrar
       if (apoiadoresVisiveis < apoiadoresData.length) {
         const botaoCarregarMais = document.createElement('div');
@@ -491,6 +517,16 @@
       document.getElementById('modalOverlay').classList.remove('flex');
     }
 
+    function mostrarModalMensagem() {
+      document.getElementById('modalMensagemAgradecimento').classList.remove('hidden');
+      document.getElementById('modalMensagemAgradecimento').classList.add('flex');
+    }
+
+    function fecharModalMensagem() {
+      document.getElementById('modalMensagemAgradecimento').classList.add('hidden');
+      document.getElementById('modalMensagemAgradecimento').classList.remove('flex');
+    }
+
     function copiarCodigoPix(codigo) {
       // Método 1: Tentar usar navigator.clipboard (funciona na maioria dos navegadores modernos)
       if (navigator.clipboard && window.isSecureContext) {
@@ -515,15 +551,15 @@
         textArea.style.left = '-999999px';
         textArea.style.top = '-999999px';
         document.body.appendChild(textArea);
-        
+
         // Para dispositivos móveis, foca no elemento
         textArea.focus();
         textArea.select();
-        
+
         // Tenta usar o comando de cópia
         const successful = document.execCommand('copy');
         document.body.removeChild(textArea);
-        
+
         if (successful) {
           mostrarModal("📋 Código PIX copiado com sucesso!");
         } else {
@@ -559,7 +595,7 @@
           </div>
         </div>
       `;
-      
+
       document.getElementById('modalContent').innerHTML = modalHTML;
       document.getElementById('modalOverlay').classList.remove('hidden');
       document.getElementById('modalOverlay').classList.add('flex');
@@ -577,14 +613,14 @@
       const interval = setInterval(() => {
         const minutos = Math.floor(tempoRestante / 60);
         const segs = tempoRestante % 60;
-        
+
         tempoElement.textContent = `${minutos.toString().padStart(2, '0')}:${segs.toString().padStart(2, '0')}`;
-        
+
         if (tempoRestante <= 0) {
           clearInterval(interval);
           mostrarConfirmacao();
         }
-        
+
         tempoRestante--;
       }, 1000);
     }
@@ -653,6 +689,36 @@
     function iniciarLive() {
       mostrarModal("🎥 A live vai começar ao final da contagem regressiva...");
     }
+
+    // Manipulador para o envio do formulário de mensagem
+    document.getElementById('mensagem-form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Previne o envio padrão do formulário
+
+      // Envia o formulário de forma assíncrona
+      const form = e.target;
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          // Se o envio for bem-sucedido, mostra o modal de agradecimento
+          mostrarModalMensagem();
+          form.reset(); // Limpa o formulário
+        } else {
+          // Se houver um erro, mostra uma mensagem genérica
+          mostrarModal("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.");
+        }
+      }).catch(error => {
+        // Se houver uma falha na rede, mostra uma mensagem de erro
+        console.error('Erro na rede:', error);
+        mostrarModal("Ocorreu um erro de rede. Por favor, verifique sua conexão e tente novamente.");
+      });
+    });
 
     // Animação de entrada
     window.addEventListener('load', () => {
