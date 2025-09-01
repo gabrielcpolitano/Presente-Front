@@ -162,17 +162,13 @@
     <!-- Seção 2: Presentes / Pagamento PIX -->
     <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow mb-12">
       <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center font-elegant">🎁 Presentes</h2>
-      <p class="text-center text-gray-600 mb-4">Escolha um valor para contribuir</p>
+      <p class="text-center text-gray-600 mb-4">Escolha um valor fixo ou digite um valor personalizado</p>
 
       <div class="gift-decoration">
         🎁✨🎂
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
-        <button type="button" onclick="preencherValor(10)" class="present-button present-button-10">
-          <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX" class="present-icon w-12 h-12 mx-auto mb-2">
-          <p class="present-value">R$ 10</p>
-        </button>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
         <button type="button" onclick="preencherValor(20)" class="present-button present-button-20">
           <img src="attached_assets/artpoin-logo-pix_1756689338212.png" alt="PIX" class="present-icon w-12 h-12 mx-auto mb-2">
           <p class="present-value">R$ 20</p>
@@ -226,7 +222,7 @@
 
         <div>
           <label for="valor" class="block text-sm font-medium text-gray-700 mb-2">Valor (R$)</label>
-          <input type="number" id="valor" step="0.01" required 
+          <input type="number" id="valor" step="0.01" required placeholder="Digite o valor desejado"
                  class="w-full font-sans px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all">
         </div>
 
@@ -338,8 +334,35 @@
     renderApoiadores();
 
     function preencherValor(valor) {
-      document.getElementById('valor').value = valor;
+      const campoValor = document.getElementById('valor');
+      campoValor.value = valor;
+      campoValor.readOnly = true;
+      campoValor.classList.add('bg-gray-100');
       document.getElementById('pagador-section').classList.remove('hidden');
+      
+      // Adiciona botão para limpar valor fixo
+      if (!document.getElementById('limpar-valor')) {
+        const botaoLimpar = document.createElement('button');
+        botaoLimpar.id = 'limpar-valor';
+        botaoLimpar.type = 'button';
+        botaoLimpar.textContent = '✏️ Digitar valor personalizado';
+        botaoLimpar.className = 'mt-2 text-sm text-blue-600 hover:text-blue-800 underline';
+        botaoLimpar.onclick = limparValor;
+        campoValor.parentNode.appendChild(botaoLimpar);
+      }
+    }
+
+    function limparValor() {
+      const campoValor = document.getElementById('valor');
+      campoValor.value = '';
+      campoValor.readOnly = false;
+      campoValor.classList.remove('bg-gray-100');
+      campoValor.focus();
+      
+      const botaoLimpar = document.getElementById('limpar-valor');
+      if (botaoLimpar) {
+        botaoLimpar.remove();
+      }
     }
 
     async function enviarPagamento() {
