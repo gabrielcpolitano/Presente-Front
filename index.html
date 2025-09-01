@@ -316,18 +316,6 @@
         </div>
         <div class="text-center space-y-2">
           <p class="text-blue-700 text-sm flex items-center justify-center gap-2">
-            <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
-            </svg>
-            <strong>PIX Oficial do Banco Central do Brasil</strong>
-          </p>
-          <p class="text-blue-700 text-sm flex items-center justify-center gap-2">
-            <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z" />
-            </svg>
-            Transação instantânea e protegida pelo seu banco
-          </p>
-          <p class="text-blue-700 text-sm flex items-center justify-center gap-2">
 
             Sistema regulamentado e monitorado pelo MercadoPago
           </p>
@@ -735,6 +723,12 @@
 
           // Fechar o modal automaticamente
           fecharModalPix();
+
+          // Rolar para o topo da página automaticamente
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
 
           // Mostrar a seção QR Code
           qrSection.classList.remove('hidden');
