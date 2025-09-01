@@ -4,11 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Presente de Casamento - PIX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
+          fontFamily: {
+            'elegant': ['Playfair Display', 'serif'],
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+          },
           colors: {
             rose: {
               50: '#fff1f2',
@@ -119,19 +126,19 @@
     }
   </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200">
+<body class="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 font-sans">
   <div class="container mx-auto px-4 py-8 max-w-4xl">
 
     <!-- Header -->
     <div class="text-center mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Gabriel e Leliano</h1>
-      <p class="text-lg text-gray-600">1 de Novembro</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-elegant">Gabriel e Leliano</h1>
+      <p class="text-lg text-gray-600 font-elegant italic">1 de Novembro</p>
     </div>
 
     <!-- Layout Vertical -->
     <!-- Seção 1: Mensagem -->
     <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow mb-8">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">✉️ Deixe uma mensagem</h2>
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center font-elegant">✉️ Deixe uma mensagem</h2>
       <form id="mensagem-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" target="_blank" class="space-y-4">
         <div>
           <label for="nome" class="block text-sm font-medium text-gray-700 mb-2">Seu Nome</label>
@@ -154,7 +161,7 @@
 
     <!-- Seção 2: Presentes / Pagamento PIX -->
     <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow mb-12">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">🎁 Presentes</h2>
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center font-elegant">🎁 Presentes</h2>
       <p class="text-center text-gray-600 mb-4">Escolha um valor para contribuir</p>
 
       <div class="gift-decoration">
@@ -235,7 +242,7 @@
 
     <!-- Live do Casamento -->
     <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-12 hover:shadow-xl transition-shadow">
-      <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">📺 Live do Casamento</h1>
+      <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center font-elegant">📺 Live do Casamento</h1>
       <div id="liveVideo" class="relative w-full h-64 md:h-80 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden flex items-center justify-center">
         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <button onclick="iniciarLive()" 
@@ -251,13 +258,13 @@
 
     <!-- Contagem Regressiva -->
     <div class="bg-gradient-to-r from-slate-500 to-slate-600 rounded-2xl shadow-lg p-6 md:p-8 mb-12 text-white">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">⏰ Contagem Regressiva</h2>
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center font-elegant">⏰ Contagem Regressiva</h2>
       <div id="countdown" class="text-center text-2xl md:text-4xl font-bold"></div>
     </div>
 
     <!-- Lista de Apoiadores -->
     <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">👥 Quem já ajudou</h2>
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center font-elegant">👥 Quem já ajudou</h2>
       <div id="apoiadores" class="grid gap-4 md:grid-cols-2 lg:grid-cols-3"></div>
     </div>
 
@@ -285,7 +292,7 @@
     <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-8 max-w-md w-full mx-4 transform transition-all">
       <div class="text-center">
         <div class="text-6xl mb-4">🎉</div>
-        <h3 class="text-2xl font-bold text-gray-800 mb-4">Obrigado pelo seu presente!</h3>
+        <h3 class="text-2xl font-bold text-gray-800 mb-4 font-elegant">Obrigado pelo seu presente!</h3>
         <p class="text-gray-600 mb-6">Em menos de 24 horas seu nome aparecerá na lista abaixo.</p>
         <button onclick="recarregarPagina()" 
                 class="w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-gray-600 hover:to-gray-700 transition-all duration-200">
@@ -356,12 +363,12 @@
       if (data.point_of_interaction?.transaction_data?.qr_code_base64) {
         qrDiv.innerHTML = `
           <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 text-center hover:shadow-xl transition-shadow">
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">📱 Escaneie o QR Code</h3>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 font-elegant">📱 Escaneie o QR Code</h3>
             <div class="flex justify-center mb-6">
               <img src="data:image/png;base64,${data.point_of_interaction.transaction_data.qr_code_base64}" 
                    alt="QR Code PIX" class="rounded-lg shadow-md max-w-xs">
             </div>
-            <h4 class="text-lg font-semibold text-gray-700 mb-3">Código PIX</h4>
+            <h4 class="text-lg font-semibold text-gray-700 mb-3 font-elegant">Código PIX</h4>
             <div class="bg-gray-100 p-4 rounded-lg break-all text-sm font-mono text-gray-700 mb-4">
               ${data.point_of_interaction.transaction_data.qr_code}
             </div>
