@@ -314,12 +314,26 @@
   </div>
 
   <script>
-    // JSON inicial de apoiadores
-    const apoiadoresData = [
-      { nome: "Ana", mensagem: "Parabéns ao casal!" },
-      { nome: "Carlos", mensagem: "Muita felicidade!" },
-      { nome: "Mariana", mensagem: "Tudo de bom!" }
-    ];
+    // Array para armazenar apoiadores
+    let apoiadoresData = [];
+
+    // Carregar apoiadores do arquivo JSON
+    async function carregarApoiadores() {
+      try {
+        const response = await fetch('./apoiadores.json');
+        apoiadoresData = await response.json();
+        renderApoiadores();
+      } catch (error) {
+        console.error('Erro ao carregar apoiadores:', error);
+        // Fallback se não conseguir carregar o arquivo
+        apoiadoresData = [
+          { nome: "Ana", mensagem: "Parabéns ao casal!" },
+          { nome: "Carlos", mensagem: "Muita felicidade!" },
+          { nome: "Mariana", mensagem: "Tudo de bom!" }
+        ];
+        renderApoiadores();
+      }
+    }
 
     function renderApoiadores() {
       const container = document.getElementById('apoiadores');
@@ -335,7 +349,8 @@
       });
     }
 
-    renderApoiadores();
+    // Carrega apoiadores quando a página carrega
+    carregarApoiadores();
 
     function preencherValor(valor) {
       // Only set empty value for the first button (valor = 10), others use their actual value
