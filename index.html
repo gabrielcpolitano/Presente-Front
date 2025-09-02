@@ -345,7 +345,7 @@
   <!-- Modal de Confirmação -->
   <div id="modalConfirmacao" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
     <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-8 max-w-md w-full mx-4 transform transition-all">
-      <p class="text-center text-gray-800 mb-6 text-lg">⏰ Tempo esgotado! Você conseguiu efetuar o pagamento?</p>
+      <p class="text-center text-gray-800 mb-6 text-lg">Tempo esgotado! Você conseguiu efetuar o pagamento?</p>
       <div class="flex gap-4">
         <button onclick="recarregarPagina()"
           class="flex-1 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200">
@@ -441,21 +441,7 @@
         </div>
       </div>
 
-      <button type="button" onclick="recarregarPagina()"
-        class="w-full mt-3 bg-gradient-to-r from-gray-500 to-gray-500 text-white font-semibold py-3 px-6 rounded-lg hover:from-gray-500 hover:to-gray-500 transform hover:scale-105 transition-all duration-200">
-        Recarregar Página
-      </button>
-
-      <div id="modal-dica-pix" class="mt-3 p-3 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg">
-        <p class="text-sm text-yellow-800 flex items-start gap-2">
-          <svg class="w-4 h-4 text-yellow-600 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M9,21C9,22.1 9.9,23 11,23H13C14.1,23 15,22.1 15,21V20H9V21M12,2C8.1,2 5,5.1 5,9C5,11.4 6.2,13.5 8,14.7V17C8,17.6 8.4,18 9,18H15C15.6,18 16,17.6 16,17V14.7C17.8,13.4 19,11.3 19,9C19,5.1 15.9,2 12,2Z" />
-          </svg>
-          <span><strong>Dica:</strong> Caso o PIX não for gerado, clique no botão acima "Recarregar Página" e tente
-            novamente.</span>
-        </p>
-      </div>
+      
     </div>
   </div>
   </div>
@@ -610,9 +596,6 @@
         const qrSection = document.getElementById('qr-section');
         const qrContent = document.getElementById('qr-content');
         if (data.point_of_interaction?.transaction_data?.qr_code_base64) {
-          // Atualizar a dica para mostrar sucesso
-          atualizarDicaPix(true);
-
           // Fechar o modal automaticamente
           fecharModalPix();
 
@@ -627,9 +610,13 @@
 
           qrContent.innerHTML = `
           <div class="text-center">
-            <div class="flex justify-center mb-6">
+            <div class="flex justify-center mb-4">
               <img src="data:image/png;base64,${data.point_of_interaction.transaction_data.qr_code_base64}" 
                    alt="QR Code PIX" class="rounded-lg shadow-md max-w-xs">
+            </div>
+            <div class="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+              <p class="text-2xl font-bold text-black mb-1">R$ ${valor.toFixed(2).replace('.', ',')}</p>
+              <p class="text-sm text-black">Valor do PIX</p>
             </div>
             <h4 class="text-lg font-semibold text-gray-700 mb-3">Código PIX</h4>
             <div class="bg-gray-100 p-4 rounded-lg break-all text-sm font-mono text-gray-700 mb-4">
@@ -816,20 +803,7 @@
       setTimeout(() => copiarCodigoPix(codigo), 100);
     }
 
-    function atualizarDicaPix(sucesso) {
-      const dicaDiv = document.getElementById('modal-dica-pix');
-      if (sucesso) {
-        dicaDiv.className = 'mt-3 p-3 bg-green-50 border-l-4 border-green-400 rounded-lg';
-        dicaDiv.innerHTML = `
-          <p class="text-sm text-green-800">✅ <strong>Sucesso:</strong> Seu PIX foi gerado com sucesso e está logo abaixo.</p>
-        `;
-      } else {
-        dicaDiv.className = 'mt-3 p-3 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg';
-        dicaDiv.innerHTML = `
-          <p class="text-sm text-yellow-800">💡 <strong>Dica:</strong> Caso o PIX não for gerado, clique no botão acima "Recarregar Página" e tente novamente.</p>
-        `;
-      }
-    }
+    
 
     function iniciarContadorPix(segundos) {
       const tempoElement = document.getElementById('tempo-restante');
