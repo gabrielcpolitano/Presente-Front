@@ -9,7 +9,8 @@
   <!-- Meta tags para WhatsApp e redes sociais -->
   <meta property="og:title" content="Gabriel & Leliane">
   <meta property="og:description" content="Escolha um presente especial para os noivos! 🎁💕">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop&crop=center">
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop&crop=center">
   <meta property="og:url" content="">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Casamento Gabriel e Leliane">
@@ -18,16 +19,20 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Gabriel e Leliane">
   <meta name="twitter:description" content="Escolha um presente especial para os noivos! 🎁💕">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop&crop=center">
+  <meta name="twitter:image"
+    content="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop&crop=center">
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -135,12 +140,15 @@
         transform: translateY(100vh) rotate(0deg);
         opacity: 0;
       }
+
       10% {
         opacity: 0.7;
       }
+
       90% {
         opacity: 0.7;
       }
+
       100% {
         transform: translateY(-100px) rotate(360deg);
         opacity: 0;
@@ -162,9 +170,12 @@
     }
 
     @keyframes pulse-heart {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: scale(1);
       }
+
       50% {
         transform: scale(1.1);
       }
@@ -175,8 +186,13 @@
     }
 
     @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
   </style>
 </head>
@@ -198,7 +214,8 @@
     <div id="qr-section" class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg p-8 mb-16 hidden">
       <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center font-elegant flex items-center justify-center gap-3">
         <svg class="w-8 h-8 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21A2,2 0 0,0 7,23H17A2,2 0 0,0 19,21V3C19,1.89 18.1,1 17,1Z"/>
+          <path
+            d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21A2,2 0 0,0 7,23H17A2,2 0 0,0 19,21V3C19,1.89 18.1,1 17,1Z" />
         </svg>
         Escaneie o QR Code PIX
       </h2>
@@ -211,84 +228,94 @@
         🎁 Lista de Presentes Especiais
       </h2>
       <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-        Cada presente representa um momento especial que os noivos querem viver juntos. 
+        Cada presente representa um momento especial que os noivos querem viver juntos.
         Escolha o que mais toca o seu coração! ✨
       </p>
-      
+
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <div class="gift-card rounded-2xl p-6 cursor-pointer" onclick="selecionarPresente(10, 'Paga o nosso café em casal ☕💑')">
+        <div class="gift-card rounded-2xl p-6 cursor-pointer"
+          onclick="selecionarPresente(20, 'Paga o nosso café em casal ☕💑')">
           <div class="text-center">
             <div class="text-4xl mb-4">☕💑</div>
-            <div class="gift-value text-2xl mb-3">R$ 10</div>
+            <div class="gift-value text-2xl mb-3">R$ 20</div>
             <p class="gift-description text-sm leading-relaxed">Paga o nosso café em casal</p>
           </div>
         </div>
 
-        <div class="gift-card rounded-2xl p-6 cursor-pointer" onclick="selecionarPresente(16, 'Paga o nosso sorvete 🍦')">
+        <div class="gift-card rounded-2xl p-6 cursor-pointer"
+          onclick="selecionarPresente(30, 'Paga o nosso sorvete 🍦')">
           <div class="text-center">
             <div class="text-4xl mb-4">🍦</div>
-            <div class="gift-value text-2xl mb-3">R$ 16</div>
+            <div class="gift-value text-2xl mb-3">R$ 30</div>
             <p class="gift-description text-sm leading-relaxed">Paga o nosso sorvete</p>
           </div>
         </div>
 
-        <div class="gift-card rounded-2xl p-6 cursor-pointer" onclick="selecionarPresente(26, 'Paga o nosso açaí refrescante 🥶🫐')">
+        <div class="gift-card rounded-2xl p-6 cursor-pointer"
+          onclick="selecionarPresente(60, 'Paga o nosso açaí refrescante 🥶🫐')">
           <div class="text-center">
             <div class="text-4xl mb-4">🥶🫐</div>
-            <div class="gift-value text-2xl mb-3">R$ 26</div>
+            <div class="gift-value text-2xl mb-3">R$ 60</div>
             <p class="gift-description text-sm leading-relaxed">Paga o nosso açaí refrescante</p>
           </div>
         </div>
 
-        <div class="gift-card rounded-2xl p-6 cursor-pointer" onclick="selecionarPresente(42, 'Paga a nossa pizza de sexta-feira 🍕')">
+        <div class="gift-card rounded-2xl p-6 cursor-pointer"
+          onclick="selecionarPresente(80, 'Paga a nossa pizza de sexta-feira 🍕')">
           <div class="text-center">
             <div class="text-4xl mb-4">🍕</div>
-            <div class="gift-value text-2xl mb-3">R$ 42</div>
+            <div class="gift-value text-2xl mb-3">R$ 80</div>
             <p class="gift-description text-sm leading-relaxed">Paga a nossa pizza de sexta-feira</p>
           </div>
         </div>
 
-        <div class="gift-card rounded-2xl p-6 cursor-pointer" onclick="selecionarPresente(67, 'Paga o nosso cinema com pipoca 🎬🍿')">
+        <div class="gift-card rounded-2xl p-6 cursor-pointer"
+          onclick="selecionarPresente(100, 'Paga um piquenique abençoado 🧺🌳')">
           <div class="text-center">
-            <div class="text-4xl mb-4">🎬🍿</div>
-            <div class="gift-value text-2xl mb-3">R$ 67</div>
-            <p class="gift-description text-sm leading-relaxed">Paga o nosso cinema com pipoca</p>
+            <div class="text-4xl mb-4">🧺🌳</div>
+            <div class="gift-value text-2xl mb-3">R$ 100</div>
+            <p class="gift-description text-sm leading-relaxed">Paga um piquenique abençoado</p>
           </div>
         </div>
 
-        <div class="gift-card rounded-2xl p-6 cursor-pointer" onclick="selecionarPresente(107, 'Paga o nosso rodízio de sushi 🍣🥢')">
+        <div class="gift-card rounded-2xl p-6 cursor-pointer"
+          onclick="selecionarPresente(150, 'Paga o nosso rodízio de sushi 🍣🥢')">
           <div class="text-center">
             <div class="text-4xl mb-4">🍣🥢</div>
-            <div class="gift-value text-2xl mb-3">R$ 107</div>
+            <div class="gift-value text-2xl mb-3">R$ 150</div>
             <p class="gift-description text-sm leading-relaxed">Paga o nosso rodízio de sushi</p>
           </div>
         </div>
 
-        <div class="gift-card rounded-2xl p-6 cursor-pointer" onclick="selecionarPresente(171, 'Paga um jantar romântico à luz de velas 🍷🍝')">
+        <div class="gift-card rounded-2xl p-6 cursor-pointer"
+          onclick="selecionarPresente(200, 'Paga um jantar romântico à luz de velas 🍷🍝')">
           <div class="text-center">
             <div class="text-4xl mb-4">🍷🍝</div>
-            <div class="gift-value text-2xl mb-3">R$ 171</div>
+            <div class="gift-value text-2xl mb-3">R$ 200</div>
             <p class="gift-description text-sm leading-relaxed">Paga um jantar romântico à luz de velas</p>
           </div>
         </div>
 
-        <div class="gift-card rounded-2xl p-6 cursor-pointer" onclick="selecionarPresente(274, 'Pague nossa primeira conta de força e água 💡🚿')">
+        <div class="gift-card rounded-2xl p-6 cursor-pointer"
+          onclick="selecionarPresente(275, 'Pague nossa primeira conta de força e água 💡🚿')">
           <div class="text-center">
             <div class="text-4xl mb-4">💡🚿</div>
-            <div class="gift-value text-2xl mb-3">R$ 274</div>
+            <div class="gift-value text-2xl mb-3">R$ 275</div>
             <p class="gift-description text-sm leading-relaxed">Pague nossa primeira conta de força e água</p>
           </div>
         </div>
 
-        <div class="gift-card rounded-2xl p-6 cursor-pointer" onclick="selecionarPresente(438, 'Paga uma noite de hospedagem especial 🏨💫')">
+        <div class="gift-card rounded-2xl p-6 cursor-pointer"
+          onclick="selecionarPresente(400, 'Paga uma noite de hospedagem especial 🏨💫')">
           <div class="text-center">
             <div class="text-4xl mb-4">🏨💫</div>
-            <div class="gift-value text-2xl mb-3">R$ 438</div>
+            <div class="gift-value text-2xl mb-3">R$ 400</div>
             <p class="gift-description text-sm leading-relaxed">Paga uma noite de hospedagem especial</p>
           </div>
         </div>
 
-        <div class="gift-card rounded-2xl p-6 cursor-pointer" onclick="selecionarPresente(700, 'Pague a nossa primeira compra em casal 🛒❤️')">
+        <div class="gift-card rounded-2xl p-6 cursor-pointer"
+          onclick="selecionarPresente(700, 'Pague a nossa primeira compra em casal 🛒❤️')">
           <div class="text-center">
             <div class="text-4xl mb-4">🛒❤️</div>
             <div class="gift-value text-2xl mb-3">R$ 700</div>
@@ -299,8 +326,10 @@
     </div>
 
     <!-- Modal de PIX -->
-    <div id="modalPix" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4" onclick="fecharModalSeClicarFora(event)">
-      <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-lg w-full mx-4 transform transition-all max-h-[90vh] overflow-y-auto">
+    <div id="modalPix" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4"
+      onclick="fecharModalSeClicarFora(event)">
+      <div
+        class="bg-white rounded-2xl shadow-2xl p-8 max-w-lg w-full mx-4 transform transition-all max-h-[90vh] overflow-y-auto">
         <div class="text-center mb-6">
           <div class="text-6xl mb-4" id="pixEmoji">🎁</div>
           <h3 class="text-2xl font-bold text-gray-800 mb-2 font-elegant">Finalizar Presente</h3>
@@ -314,24 +343,24 @@
             <label for="modal-email" class="block text-sm font-semibold text-gray-700 mb-2">
               📧 Seu e-mail
             </label>
-            <input type="email" id="modal-email" placeholder="exemplo@email.com" 
-                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all">
+            <input type="email" id="modal-email" placeholder="exemplo@email.com"
+              class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all">
           </div>
-          
+
           <div>
             <label for="modal-descricao" class="block text-sm font-semibold text-gray-700 mb-2">
               💝 Mensagem carinhosa (opcional)
             </label>
             <textarea id="modal-descricao" placeholder="Deixe uma mensagem especial para os noivos..."
-                      class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all resize-none h-20"></textarea>
+              class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all resize-none h-20"></textarea>
           </div>
-          
+
           <div>
             <label for="modal-valor" class="block text-sm font-semibold text-gray-700 mb-2">
-              💰 Valor do presente
+              💰 Valor do presente <strong>(valor editavel)</strong>
             </label>
             <input type="number" id="modal-valor" placeholder="0.00" step="0.01" min="1"
-                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all">
+              class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all">
           </div>
         </div>
 
@@ -348,7 +377,8 @@
         <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-4 mb-6">
           <div class="flex items-center justify-center mb-2">
             <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11H16V16H8V11H9.2V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.4,8.7 10.4,10V11H13.6V10C13.6,8.7 12.8,8.2 12,8.2Z"/>
+              <path
+                d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11H16V16H8V11H9.2V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.4,8.7 10.4,10V11H13.6V10C13.6,8.7 12.8,8.2 12,8.2Z" />
             </svg>
             <span class="font-semibold text-gray-700 text-sm">Pagamento 100% Seguro</span>
           </div>
@@ -358,12 +388,14 @@
         </div>
 
         <div class="flex gap-4">
-          <button onclick="fecharModalPix()" class="flex-1 bg-gray-200 text-gray-700 font-semibold py-4 px-6 rounded-xl hover:bg-gray-300 transition-all duration-200">
+          <button onclick="fecharModalPix()"
+            class="flex-1 bg-gray-200 text-gray-700 font-semibold py-4 px-6 rounded-xl hover:bg-gray-300 transition-all duration-200">
             Cancelar
           </button>
-          <button onclick="enviarPagamento()" id="modal-botao-gerar-pix" class="flex-1 bg-gradient-to-r from-purple-500 to-rose-500 text-white font-semibold py-4 px-6 rounded-xl hover:from-purple-600 hover:to-rose-600 transition-all duration-200 transform hover:scale-105 flex items-center justify-center gap-2">
+          <button onclick="enviarPagamento()" id="modal-botao-gerar-pix"
+            class="flex-1 bg-gradient-to-r from-purple-500 to-rose-500 text-white font-semibold py-4 px-6 rounded-xl hover:from-purple-600 hover:to-rose-600 transition-all duration-200 transform hover:scale-105 flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"/>
+              <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
             </svg>
             Gerar PIX
           </button>
@@ -376,7 +408,8 @@
       <div class="bg-white rounded-2xl shadow-2xl p-6 max-w-md w-full mx-4 transform transition-all">
         <p id="modalMessage" class="text-center text-gray-800 mb-6 text-lg"></p>
         <div class="text-center">
-          <button onclick="fecharModal()" class="bg-gradient-to-r from-purple-500 to-rose-500 text-white font-semibold py-3 px-8 rounded-xl hover:from-purple-600 hover:to-rose-600 transition-all duration-200">
+          <button onclick="fecharModal()"
+            class="bg-gradient-to-r from-purple-500 to-rose-500 text-white font-semibold py-3 px-8 rounded-xl hover:from-purple-600 hover:to-rose-600 transition-all duration-200">
             OK
           </button>
         </div>
@@ -388,10 +421,12 @@
       <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-8 max-w-md w-full mx-4 transform transition-all">
         <p class="text-center text-gray-800 mb-6 text-lg">Tempo esgotado! Você conseguiu efetuar o pagamento?</p>
         <div class="flex gap-4">
-          <button onclick="recarregarPagina()" class="flex-1 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200">
+          <button onclick="recarregarPagina()"
+            class="flex-1 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200">
             Não
           </button>
-          <button onclick="mostrarAgradecimento()" class="flex-1 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-200">
+          <button onclick="mostrarAgradecimento()"
+            class="flex-1 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-200">
             Sim
           </button>
         </div>
@@ -426,28 +461,10 @@
     let apoiadoresVisiveis = 0;
     const apoiadoresPorPagina = 6;
 
-    // Função para criar corações flutuantes
-    function criarCoracaoFlutuante() {
-      const floating = document.getElementById('floating-hearts');
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.innerHTML = '💕';
-      heart.style.left = Math.random() * 100 + '%';
-      heart.style.animationDelay = Math.random() * 2 + 's';
-      floating.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 6000);
-    }
-
-    // Criar corações periodicamente
-    setInterval(criarCoracaoFlutuante, 3000);
-
     // Função para selecionar presente
     function selecionarPresente(valor, descricao) {
       presenteSelecionado = { valor, descricao };
-      
+
       // Mapear emojis específicos para cada presente
       let emoji = '🎁';
       if (descricao.includes('café')) emoji = '☕💑';
@@ -460,15 +477,15 @@
       else if (descricao.includes('conta')) emoji = '💡🚿';
       else if (descricao.includes('hospedagem')) emoji = '🏨💫';
       else if (descricao.includes('compra')) emoji = '🛒❤️';
-      
+
       document.getElementById('pixEmoji').textContent = emoji;
       document.getElementById('pixValor').textContent = `R$ ${valor}`;
       document.getElementById('pixDescricao').textContent = descricao.replace(/[^\w\s\u00C0-\u017F]/g, '').trim();
-      
+
       // Preencher valor no campo
       document.getElementById('modal-valor').value = valor;
       document.getElementById('modal-descricao').value = descricao;
-      
+
       document.getElementById('modalPix').classList.remove('hidden');
       document.getElementById('modalPix').classList.add('flex');
     }
@@ -514,7 +531,7 @@
       try {
         const resposta = await fetch('https://presente-api-1.onrender.com/pagar', {
           method: 'POST',
-          headers: {'Content-Type': 'application/json'},
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             payer_email: email,
             description: descricao,
@@ -534,7 +551,7 @@
 
         const qrSection = document.getElementById('qr-section');
         const qrContent = document.getElementById('qr-content');
-        
+
         if (data.point_of_interaction?.transaction_data?.qr_code_base64) {
           // Fechar o modal automaticamente
           fecharModalPix();
@@ -662,7 +679,7 @@
       contadorPix = setInterval(() => {
         const minutos = Math.floor(tempoRestante / 60);
         const segundosRestantes = tempoRestante % 60;
-        
+
         tempoElement.textContent = `${minutos.toString().padStart(2, '0')}:${segundosRestantes.toString().padStart(2, '0')}`;
 
         if (tempoRestante <= 0) {
@@ -691,7 +708,7 @@
       // Fechar modal de confirmação
       document.getElementById('modalConfirmacao').classList.add('hidden');
       document.getElementById('modalConfirmacao').classList.remove('flex');
-      
+
       // Reiniciar contador PIX por mais 2 minutos
       iniciarContadorPix(120);
     }
@@ -700,7 +717,7 @@
       // Fechar modal de confirmação
       document.getElementById('modalConfirmacao').classList.add('hidden');
       document.getElementById('modalConfirmacao').classList.remove('flex');
-      
+
       // Mostrar modal de agradecimento
       const modalAgradecimento = `
         <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-lg w-full mx-4 transform transition-all text-center">
@@ -725,12 +742,12 @@
           </button>
         </div>
       `;
-      
+
       document.getElementById('modalOverlay').innerHTML = modalAgradecimento;
       document.getElementById('modalOverlay').classList.remove('hidden');
       document.getElementById('modalOverlay').classList.add('flex');
     }
-    
+
     function fecharAgradecimentoERecarregar() {
       location.reload();
     }
@@ -786,7 +803,7 @@
           </button>
         </div>
       `;
-      
+
       document.getElementById('modalOverlay').innerHTML = modalHTML;
       document.getElementById('modalOverlay').classList.remove('hidden');
       document.getElementById('modalOverlay').classList.add('flex');
@@ -878,7 +895,7 @@
     document.addEventListener('DOMContentLoaded', carregarApoiadores);
 
     // Fechar modal com ESC
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         fecharModalPix();
         fecharModal();
